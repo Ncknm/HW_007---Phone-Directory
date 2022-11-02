@@ -33,9 +33,9 @@ def create_new_contact ():
 
 def write_data(data):
     with open(f'{filename}.txt', 'a', encoding = 'utf-8') as ph:
-        ph.write('\n' + convert_data((data), ',')) 
+        ph.write(convert_data((data), ',')) 
     with open(f'{filename}.csv', 'a', encoding = 'utf-8') as phc:
-        phc.write('\n' + convert_data((data), ':'))
+        phc.write(convert_data((data), ':'))
 
 
 def find_all_by_key(data):

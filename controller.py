@@ -9,7 +9,7 @@ filename = 'phone_directory'
 
 # ur = user request принимает номер запроса от пользователя 
 def process_control():
-    ur = int(input('Hello, please choose something from menu! \n If you want to create contact, please input 1. \n If you want to find contact, please input 2. \n If you want to see the list contacts, please input 3. \n If you want to close phone directory, please input 4. \n'))
+    ur = int(input('Hello, please choose something from menu! \n If you want to create contact, please input 1. \n If you want to find contact, please input 2. \n If you want to see the list contacts, please input 3. \n If you want to close phone directory, please input 4. \n\n' 'Input correct menu item: '))
     while ur > 4 or ur < 1:
         ur = int(input('Input correct menu item: '))
     if ur == 1:
