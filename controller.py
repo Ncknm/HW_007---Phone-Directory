@@ -14,10 +14,14 @@ def process_control():
         ur = int(input('Input correct menu item: '))
     if ur == 1:
         write_data(create_new_contact())
+        exit()
     elif ur == 2:
         print(tabulate(find_all_by_key(create_correct_format(filename)), headers="keys", tablefmt="simple_grid"))
+        exit()
     elif ur == 3:
         print(tabulate(create_correct_format(filename), headers="keys", tablefmt="simple_grid"))
+        exit()
     else:
         print('The program will be close! \n Have a good day! \n See you later!')
+        exit()
 

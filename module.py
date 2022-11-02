@@ -27,8 +27,7 @@ def create_new_contact ():
     new_contact['Surname'] = input('Input your surname, please: ')
     new_contact['Patronymic'] = input('Input your patronymic, please: ')
     new_contact['Phone'] = input('Input your phone number, please: ')
-    contact = [new_contact]
-    print(tabulate(contact, headers="keys", tablefmt="simple_grid"))
+    print(tabulate([new_contact], headers="keys", tablefmt="simple_grid"))
     return new_contact
 
 
