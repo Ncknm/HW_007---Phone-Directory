@@ -1,13 +1,13 @@
 from tabulate import tabulate 
 
 filename = 'phone_directory'
+key_array = ['Name', 'Surname', 'Patronymic', 'Phone']
 
 def create_correct_format (data, sep = ','):
     with open(f'{data}.txt', 'r') as ph:
         correct_data = []
         for line in ph:
             line = line.replace('\n', '')
-            key_array = ['Name', 'Surname', 'Patronymic', 'Phone']
             correct_data.append(dict(zip(key_array, line.split(sep))))
         return correct_data
 
@@ -22,11 +22,7 @@ def convert_data(data, sep):
 
 
 def create_new_contact ():
-    new_contact = {}
-    new_contact['Name'] = input('Input your name, please: ')
-    new_contact['Surname'] = input('Input your surname, please: ')
-    new_contact['Patronymic'] = input('Input your patronymic, please: ')
-    new_contact['Phone'] = input('Input your phone number, please: ')
+    new_contact = dict(zip(key_array, input('Input your name, surname, patronymic and phone (by spaces): ').split()))
     print(tabulate([new_contact], headers="keys", tablefmt="simple_grid"))
     return new_contact
 
@@ -43,7 +39,7 @@ def find_all_by_key(data):
     value = input('If you want find somebody please input search parametrs: ')
     for dict_ in data:
         for values in dict_:
-            if dict_[values] == value:
+            if value in dict_[values]:
                 yield dict_
                 count += 1
     if count == 0:
