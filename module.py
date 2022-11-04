@@ -1,3 +1,4 @@
+#ver. 1.1
 from tabulate import tabulate 
 
 filename = 'phone_directory'
